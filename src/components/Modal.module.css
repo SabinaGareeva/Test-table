@@ -1,0 +1,49 @@
+.background__modal {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* opacity: 0.5; */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: white;
+  width: 24rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.modal__title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: bold;
+}
+
+.modal__button {
+  color: rgb(75 85 99);
+  border-radius: 50%;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 0;
+}
+.modal__button:hover {
+  color: rgb(31 41 55);
+  background-color: rgb(229 231 235);
+}
+
+.modal__footer {
+  display: flex;
+  justify-content: end;
+}
