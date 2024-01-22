@@ -6,7 +6,6 @@ export const Modal = ({ isOpen, onClose, objectInTable }) => {
   /* Обработка закрытия модалки по клику на х */
   const handleClose = () => onClose();
 
-  // Создаем ссылку на Dom-элемент модального окна
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -18,9 +17,9 @@ export const Modal = ({ isOpen, onClose, objectInTable }) => {
       }
     };
 
-    // Если модально окно открыто и код выполняется на клиенте
+    // Если модально окно открыто и код выполняется на клиенте, добавляем слушатель события mousedown для закрытия модалки по клику вне
     if (isOpen && typeof window !== "undefined") {
-      // Добавляем слушатель события mousedown для закрытия модалки по клику вне
+      //
       document.addEventListener("mousedown", handleOutsideClick);
     }
 
@@ -37,19 +36,11 @@ export const Modal = ({ isOpen, onClose, objectInTable }) => {
   return (
     isOpen &&
     createPortal(
-      <div
-        className={css.background__modal}
-      >
-        <div
-          ref={modalRef}
-          className={css.modal}
-        >
+      <div className={css.background__modal}>
+        <div ref={modalRef} className={css.modal}>
           <header className={css.modal__header}>
             <h2 className={css.modal__title}>Дополнительная информация</h2>
-            <button
-              onClick={handleClose}
-              className={css.modal__button}
-            >
+            <button onClick={handleClose} className={css.modal__button}>
               X
             </button>
           </header>
@@ -70,7 +61,7 @@ export const Modal = ({ isOpen, onClose, objectInTable }) => {
               <li>Email: {objectInTable?.email}</li>
             </ul>
           </main>
-        
+
           <footer className={css.modal__footer}></footer>
         </div>
       </div>,
